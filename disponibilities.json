@@ -1,0 +1,591 @@
+{
+  "schedule_availability": [
+    {
+      "date": "2025-10-20",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "PROG PYTHON, Richard Frederic"},
+        {"start_time": "15:30", "end_time": "17:30", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "17:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-10-21",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BROGLIO Annie"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "STATS expl. Maîtr. & Inférence, LOUNDOU Dieudonne"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-10-22",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "14:00", "end_time": "17:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, COUTENTIN Magali"},
+        {"start_time": "17:30", "end_time": "19:30", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-10-23",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "Gestion de projet, COUTENTIN Magali"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "STATS expl. Maîtr. & Inférence, LOUNDOU Dieudonne"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BROGLIO Annie"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-10-25",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-10-26",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-03",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "PROG PYTHON, Richard Frederic"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-11-04",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-11-05",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-11-06",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-11-08",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-09",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-17",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "15:30", "end_time": "17:30", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "17:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "Outils logiciels pour le SI, POUYET Adri"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "CONCEPTION d'un SI, ATTAR Elia"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, GUEPJIP Marc"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-20",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "ANGLAIS, DAL MOULIN Alan"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-21",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BROGLIO Annie"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-22",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-23",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-24",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "ENTREPOETS DES DONNES, DIAOUOK Francois"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "ENTREPOETS DES DONNES, DIAOUOK Francois"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-25",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BIG DATA, URENA PEREZ Maria Raquel"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, JOUGLET Ludovic"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-26",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "ENTREPOETS DES DONNES, DIAOUOK Francois"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, GUEPJIP Marc"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-27",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "11:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "ANGLAIS, DAL MOULIN Alan"},
+        {"start_time": "11:00", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, JOUGLET Ludovic"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "STATS expl. Maîtr. & Inférence, LOUNDOU Dieudonne"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-28",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "11:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "STATS expl. Maîtr. & Inférence, LOUNDOU Dieudonne"},
+        {"start_time": "11:00", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BROGLIO Annie"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-11-29",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-11-30",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-01",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-02",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-03",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-04",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-05",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-06",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-07",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-08",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-09",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-10",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-11",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-12",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2025-12-13",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-14",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-15",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "15:30", "end_time": "17:30", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "17:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-12-16",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BIG DATA, URENA PEREZ Maria Raquel"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "Outils logiciels pour le SI, AGIAR Sylvie"},
+        {"start_time": "15:30", "end_time": "18:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, URENA PEREZ Maria Raquel"},
+        {"start_time": "18:00", "end_time": "20:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "20:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-12-17",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, GUEPJIP Marc"},
+        {"start_time": "12:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-12-18",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, URENA PEREZ Maria Raquel"},
+        {"start_time": "15:30", "end_time": "18:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "Outils logiciels pour le SI, AGIAR Sylvie"},
+        {"start_time": "18:00", "end_time": "20:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "20:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-12-19",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2025-12-20",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-21",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2025-12-29",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "SOUTENANCE PROJETS TUTORES"}
+      ]
+    },
+    {
+      "date": "2025-12-30",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "SOUTENANCE PROJETS TUTORES"}
+      ]
+    },
+    {
+      "date": "2025-12-31",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "SOUTENANCE PROJETS TUTORES"}
+      ]
+    },
+    {
+      "date": "2026-01-01",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "SOUTENANCE PROJETS TUTORES"}
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2026-01-05",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "ALTERNANCE / PROJET TUTORE"}
+      ]
+    },
+    {
+      "date": "2026-01-10",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2026-01-11",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2026-01-12",
+      "day": "Monday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "OUTILS LOGICIELS, BOUZEKRI Mohamed"},
+        {"start_time": "15:30", "end_time": "17:30", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "17:30", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "day": "Tuesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BIG DATA, URENA PEREZ Maria Raquel"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "Outils logiciels pour le SI, AGIAR Sylvie"},
+        {"start_time": "15:30", "end_time": "18:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, URENA PEREZ Maria Raquel"},
+        {"start_time": "18:00", "end_time": "20:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "20:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "day": "Wednesday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "PAS DE COURS"},
+        {"start_time": "14:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "day": "Thursday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "09:30", "availability": "DISPONIBLE", "event_type": "No class"},
+        {"start_time": "09:30", "end_time": "11:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "ANGLAIS, DAL MOULIN Alan"},
+        {"start_time": "11:00", "end_time": "12:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD STATISTICES, BOUZEKRI Mohamed"},
+        {"start_time": "12:30", "end_time": "14:00", "availability": "DISPONIBLE", "event_type": "Break", "details": "Lunch break"},
+        {"start_time": "14:00", "end_time": "15:30", "availability": "BLOCKED", "event_type": "COURSE", "details": "BD relationnelles, COUTENTIN Magali"},
+        {"start_time": "15:30", "end_time": "17:00", "availability": "BLOCKED", "event_type": "COURSE", "details": "Outils logiciels pour le SI, AGIAR Sylvie"},
+        {"start_time": "17:00", "end_time": "19:00", "availability": "DISPONIBLE", "event_type": "Buffer", "details": "2 hours buffer after last course"},
+        {"start_time": "19:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "day": "Friday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "No class"}
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "day": "Saturday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    },
+    {
+      "date": "2026-01-18",
+      "day": "Sunday",
+      "slots": [
+        {"start_time": "08:00", "end_time": "24:00", "availability": "DISPONIBLE", "event_type": "Weekend"}
+      ]
+    }
+  ]
+}

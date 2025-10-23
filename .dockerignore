@@ -10,6 +10,7 @@ README.md
 .vercel
 coverage
 .nyc_output
+package-lock.json
 *.png
 *.jpg
 *.jpeg

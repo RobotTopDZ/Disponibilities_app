@@ -345,7 +345,7 @@ const DispoCalendar = () => {
                   <div className="hidden sm:block">{formatDate(day.date)}</div>
                   <div className="sm:hidden">{day.day.slice(0, 3)}</div>
                   {isToday(day.date) && (
-                    <div className="text-xs font-bold">Aujourd'hui</div>
+                    <div className="text-xs font-bold">Today</div>
                   )}
                 </div>
                 <div className={`text-xs mt-1 transition-colors duration-300 ${

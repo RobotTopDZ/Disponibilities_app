@@ -27,13 +27,13 @@ const DispoCalendar = () => {
           dayAvailability[time] = true;
         });
 
-        // Mark blocked periods and add 1-hour buffer before courses
+        // Mark blocked periods and add buffer hours before and after
         day.slots.forEach(slot => {
           if (slot.availability === "BLOCKED" || slot.event_type === "Break") {
             const startHour = parseInt(slot.start_time.split(':')[0]);
             const endHour = parseInt(slot.end_time.split(':')[0]);
             
-            // Block the course time
+            // Block the actual time period
             for (let hour = startHour; hour < endHour; hour++) {
               const timeKey = `${hour.toString().padStart(2, '0')}:00`;
               if (dayAvailability[timeKey] !== undefined) {
@@ -41,12 +41,21 @@ const DispoCalendar = () => {
               }
             }
             
-            // Add 1-hour buffer before course (only for courses, not breaks)
-            if (slot.event_type === "COURSE" && startHour > 8) {
-              const bufferHour = startHour - 1;
-              const bufferTimeKey = `${bufferHour.toString().padStart(2, '0')}:00`;
-              if (dayAvailability[bufferTimeKey] !== undefined) {
-                dayAvailability[bufferTimeKey] = false;
+            // Add 1-hour buffer BEFORE non-available period
+            if (startHour > 8) {
+              const bufferBeforeHour = startHour - 1;
+              const bufferBeforeKey = `${bufferBeforeHour.toString().padStart(2, '0')}:00`;
+              if (dayAvailability[bufferBeforeKey] !== undefined) {
+                dayAvailability[bufferBeforeKey] = false;
+              }
+            }
+            
+            // Add 1-hour buffer AFTER non-available period
+            if (endHour < 22) {
+              const bufferAfterHour = endHour;
+              const bufferAfterKey = `${bufferAfterHour.toString().padStart(2, '0')}:00`;
+              if (dayAvailability[bufferAfterKey] !== undefined) {
+                dayAvailability[bufferAfterKey] = false;
               }
             }
           }
@@ -136,76 +145,76 @@ const DispoCalendar = () => {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      {/* Header */}
+      {/* Header - Mobile Optimized */}
       <div className={`shadow-sm border-b transition-colors duration-300 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div>
-                <h1 className={`text-2xl lg:text-3xl font-bold transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Calendrier de Disponibilités
-                </h1>
-                <p className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  KHALDI Oussama • {getTotalAvailableHours()} heures disponibles cette semaine
-                </p>
-              </div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
+          <div className="flex flex-col gap-3 sm:gap-4">
+            {/* Title */}
+            <div className="text-center sm:text-left">
+              <h1 className={`text-xl sm:text-2xl lg:text-3xl font-bold transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Calendrier de Disponibilités
+              </h1>
+              <p className={`text-xs sm:text-sm transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                KHALDI Oussama • {getTotalAvailableHours()}h disponibles
+              </p>
             </div>
             
-            <div className="flex flex-wrap items-center gap-2">
-              {/* Dark Mode Toggle */}
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-lg transition-all duration-300 ${
-                  darkMode 
-                    ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-                title={darkMode ? 'Mode clair' : 'Mode sombre'}
-              >
-                {darkMode ? '☀️' : '🌙'}
-              </button>
+            {/* Controls */}
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+              {/* Theme and Export */}
+              <div className="flex gap-2 justify-center sm:justify-start">
+                <button
+                  onClick={() => setDarkMode(!darkMode)}
+                  className={`px-3 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 ${
+                    darkMode 
+                      ? 'bg-gray-700 text-gray-300 hover:bg-gray-600 border border-gray-600' 
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-300'
+                  }`}
+                >
+                  {darkMode ? 'Clair' : 'Sombre'}
+                </button>
 
-              {/* Export Button */}
-              <button
-                onClick={exportSchedule}
-                className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                  darkMode 
-                    ? 'text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600' 
-                    : 'text-gray-600 bg-white hover:bg-gray-50 border border-gray-300'
-                }`}
-              >
-                📥 Exporter
-              </button>
+                <button
+                  onClick={exportSchedule}
+                  className={`px-3 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 ${
+                    darkMode 
+                      ? 'text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600' 
+                      : 'text-gray-600 bg-white hover:bg-gray-50 border border-gray-300'
+                  }`}
+                >
+                  Exporter
+                </button>
+              </div>
 
               {/* Navigation */}
-              <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+              <div className={`flex items-center gap-1 rounded-lg p-1 mx-auto sm:mx-0 ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
                 <button
                   onClick={prevWeek}
                   disabled={currentWeekStart === 0}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                  className={`px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                     darkMode 
                       ? 'text-gray-300 hover:bg-gray-600 disabled:hover:bg-transparent' 
                       : 'text-gray-600 hover:bg-white disabled:hover:bg-transparent'
                   }`}
                 >
-                  ← Précédent
+                  ← Préc
                 </button>
                 <button
                   onClick={resetToToday}
-                  className="px-3 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-all duration-300"
+                  className="px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-all duration-300"
                 >
                   Aujourd'hui
                 </button>
                 <button
                   onClick={nextWeek}
                   disabled={currentWeekStart + 7 >= processedData.length}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                  className={`px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                     darkMode 
                       ? 'text-gray-300 hover:bg-gray-600 disabled:hover:bg-transparent' 
                       : 'text-gray-600 hover:bg-white disabled:hover:bg-transparent'
                   }`}
                 >
-                  Suivant →
+                  Suiv →
                 </button>
               </div>
             </div>
@@ -213,72 +222,73 @@ const DispoCalendar = () => {
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className={`rounded-xl p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
-                <span className="text-green-600 dark:text-green-400">✅</span>
+      {/* Stats Cards - Mobile Optimized */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6">
+          <div className={`rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
+            <div className="text-center sm:flex sm:items-center sm:gap-3">
+              <div className={`hidden sm:block p-2 rounded-lg ${darkMode ? 'bg-green-900' : 'bg-green-100'}`}>
+                <div className={`w-4 h-4 rounded ${darkMode ? 'bg-green-400' : 'bg-green-600'}`}></div>
               </div>
               <div>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Heures disponibles</p>
-                <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{getTotalAvailableHours()}</p>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Disponibles</p>
+                <p className={`text-lg sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{getTotalAvailableHours()}h</p>
               </div>
             </div>
           </div>
           
-          <div className={`rounded-xl p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                <span className="text-blue-600 dark:text-blue-400">📅</span>
+          <div className={`rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
+            <div className="text-center sm:flex sm:items-center sm:gap-3">
+              <div className={`hidden sm:block p-2 rounded-lg ${darkMode ? 'bg-blue-900' : 'bg-blue-100'}`}>
+                <div className={`w-4 h-4 rounded ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
               </div>
               <div>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Jours affichés</p>
-                <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{visibleDays.length}</p>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Jours</p>
+                <p className={`text-lg sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{visibleDays.length}</p>
               </div>
             </div>
           </div>
 
-          <div className={`rounded-xl p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg">
-                <span className="text-purple-600 dark:text-purple-400">⏰</span>
+          <div className={`rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
+            <div className="text-center sm:flex sm:items-center sm:gap-3">
+              <div className={`hidden sm:block p-2 rounded-lg ${darkMode ? 'bg-purple-900' : 'bg-purple-100'}`}>
+                <div className={`w-4 h-4 rounded ${darkMode ? 'bg-purple-400' : 'bg-purple-600'}`}></div>
               </div>
               <div>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Créneaux horaires</p>
-                <p className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{timeSlots.length}</p>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Créneaux</p>
+                <p className={`text-lg sm:text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{timeSlots.length}</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Calendar Grid */}
-        <div className={`rounded-xl shadow-lg border overflow-hidden transition-all duration-300 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        {/* Calendar Grid - Mobile Optimized */}
+        <div className={`rounded-lg sm:rounded-xl shadow-lg border overflow-hidden transition-all duration-300 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           {/* Days Header */}
           <div className={`grid grid-cols-8 border-b transition-colors duration-300 ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
-            <div className={`p-3 text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Heure</div>
+            <div className={`p-2 sm:p-3 text-xs sm:text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Heure</div>
             {visibleDays.map((day) => (
-              <div key={day.date} className="p-3 text-center">
-                <div className={`text-sm font-medium transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  {formatDate(day.date)}
+              <div key={day.date} className="p-1 sm:p-3 text-center">
+                <div className={`text-xs sm:text-sm font-medium transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  <div className="hidden sm:block">{formatDate(day.date)}</div>
+                  <div className="sm:hidden">{day.day.slice(0, 3)}</div>
                 </div>
                 <div className={`text-xs mt-1 transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                  {day.availableCount || 0}h libres
+                  {day.availableCount || 0}h
                 </div>
               </div>
             ))}
           </div>
 
           {/* Time Slots Grid */}
-          <div className="max-h-96 overflow-y-auto">
+          <div className="max-h-80 sm:max-h-96 overflow-y-auto">
             {timeSlots.map((time, timeIndex) => (
               <div key={time} className={`grid grid-cols-8 border-b transition-all duration-300 hover:bg-opacity-50 ${
                 darkMode 
                   ? 'border-gray-700 hover:bg-gray-700' 
                   : 'border-gray-100 hover:bg-gray-50'
               }`}>
-                <div className={`p-3 text-sm font-medium border-r transition-colors duration-300 ${
+                <div className={`p-2 sm:p-3 text-xs sm:text-sm font-medium border-r transition-colors duration-300 ${
                   darkMode 
                     ? 'text-gray-300 bg-gray-700 border-gray-600' 
                     : 'text-gray-700 bg-gray-50 border-gray-200'
@@ -286,11 +296,11 @@ const DispoCalendar = () => {
                   {time}
                 </div>
                 {visibleDays.map((day, dayIndex) => (
-                  <div key={`${day.date}-${time}`} className={`p-2 border-r transition-colors duration-300 ${
+                  <div key={`${day.date}-${time}`} className={`p-1 sm:p-2 border-r transition-colors duration-300 ${
                     darkMode ? 'border-gray-700' : 'border-gray-100'
                   }`}>
                     <div 
-                      className={`h-8 rounded-lg text-xs font-medium flex items-center justify-center transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+                      className={`h-6 sm:h-8 rounded text-xs font-medium flex items-center justify-center transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                         day.availability && day.availability[time]
                           ? darkMode 
                             ? 'bg-green-900 text-green-300 hover:bg-green-800' 
@@ -301,7 +311,11 @@ const DispoCalendar = () => {
                       }`}
                       onClick={() => setSelectedDate(`${day.date}-${time}`)}
                     >
-                      {day.availability && day.availability[time] ? '✓' : '✕'}
+                      <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+                        day.availability && day.availability[time]
+                          ? darkMode ? 'bg-green-400' : 'bg-green-600'
+                          : darkMode ? 'bg-gray-500' : 'bg-gray-400'
+                      }`}></div>
                     </div>
                   </div>
                 ))}
@@ -310,25 +324,25 @@ const DispoCalendar = () => {
           </div>
         </div>
 
-        {/* Enhanced Legend */}
-        <div className={`mt-6 p-4 rounded-xl transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
-          <div className="flex flex-wrap items-center justify-center gap-6">
+        {/* Enhanced Legend - Mobile Optimized */}
+        <div className={`mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg sm:rounded-xl transition-all duration-300 ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <div className="flex items-center gap-2">
-              <div className={`w-4 h-4 rounded ${darkMode ? 'bg-green-900' : 'bg-green-100'}`}></div>
-              <span className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${darkMode ? 'bg-green-400' : 'bg-green-600'}`}></div>
+              <span className={`text-xs sm:text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Disponible
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <div className={`w-4 h-4 rounded ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}></div>
-              <span className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${darkMode ? 'bg-gray-500' : 'bg-gray-400'}`}></div>
+              <span className={`text-xs sm:text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Non disponible
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-blue-600 dark:text-blue-400">💡</span>
-              <span className={`text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Cliquez sur un créneau pour plus d'infos
+              <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+              <span className={`text-xs sm:text-sm transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                Cliquez pour infos
               </span>
             </div>
           </div>
